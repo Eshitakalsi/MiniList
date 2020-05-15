@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MiniList-->
+        <!--MiniList Items-->
         <scene sceneID="6YB-en-jo5">
             <objects>
                 <tableViewController id="j97-ii-9fU" customClass="TodoListViewController" customModule="MiniList" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,9 +18,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="j97-ii-9fU" id="dFh-1r-msE"/>
-                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="GoW-Pt-waw">
@@ -37,7 +34,7 @@
                             <outlet property="delegate" destination="j97-ii-9fU" id="cwR-5p-aeU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MiniList" id="poi-iC-wnC">
+                    <navigationItem key="navigationItem" title="MiniList Items" id="poi-iC-wnC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wOi-Bb-JsD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -48,7 +45,46 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faT-ev-8eR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.56521739130437" y="12.723214285714285"/>
+            <point key="canvasLocation" x="1468" y="-5"/>
+        </scene>
+        <!--MiniList-->
+        <scene sceneID="eca-wM-XUZ">
+            <objects>
+                <tableViewController id="jrb-FM-g6G" customClass="CategoryViewController" customModule="MiniList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jSn-yd-AsI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="NSi-qZ-zOT">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NSi-qZ-zOT" id="AA2-Y7-G9I">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jrb-FM-g6G" id="GSk-Xv-LQF"/>
+                            <outlet property="delegate" destination="jrb-FM-g6G" id="kih-A2-ve3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="MiniList" id="N20-jf-z9W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nnx-K5-Ulz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="jrb-FM-g6G" id="cMJ-QI-NFP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="j97-ii-9fU" kind="show" identifier="goToItems" id="8VX-KZ-kOk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7A-nL-StM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="-5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cpV-Ua-19Y">
@@ -65,12 +101,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="j97-ii-9fU" kind="relationship" relationship="rootViewController" id="HjM-T9-VEj"/>
+                        <segue destination="jrb-FM-g6G" kind="relationship" relationship="rootViewController" id="KE5-gf-9Q2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BR-Zn-zPi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.028985507246382" y="12.723214285714285"/>
+            <point key="canvasLocation" x="-675" y="-5"/>
         </scene>
     </scenes>
 </document>
