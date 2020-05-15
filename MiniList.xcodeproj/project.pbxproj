@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D935FEDA2469A6A2004E943C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935FED92469A6A2004E943C /* Item.swift */; };
 		D98C374224660C7200919F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C374124660C7200919F2E /* AppDelegate.swift */; };
 		D98C374424660C7200919F2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C374324660C7200919F2E /* SceneDelegate.swift */; };
 		D98C374624660C7200919F2E /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C374524660C7200919F2E /* TodoListViewController.swift */; };
 		D98C374924660C7200919F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98C374724660C7200919F2E /* Main.storyboard */; };
 		D98C374B24660C7300919F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98C374A24660C7300919F2E /* Assets.xcassets */; };
 		D98C374E24660C7300919F2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98C374C24660C7300919F2E /* LaunchScreen.storyboard */; };
+		D9AEFB65246E8B9200B2FFE3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9AEFB63246E8B9200B2FFE3 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D935FED92469A6A2004E943C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D98C373E24660C7200919F2E /* MiniList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98C374124660C7200919F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98C374324660C7200919F2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +25,7 @@
 		D98C374A24660C7300919F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98C374D24660C7300919F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98C374F24660C7300919F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AEFB64246E8B9200B2FFE3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 		D935FEDB2469A6A7004E943C /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				D935FED92469A6A2004E943C /* Item.swift */,
+				D9AEFB63246E8B9200B2FFE3 /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D935FEDA2469A6A2004E943C /* Item.swift in Sources */,
+				D9AEFB65246E8B9200B2FFE3 /* DataModel.xcdatamodeld in Sources */,
 				D98C374624660C7200919F2E /* TodoListViewController.swift in Sources */,
 				D98C374224660C7200919F2E /* AppDelegate.swift in Sources */,
 				D98C374424660C7200919F2E /* SceneDelegate.swift in Sources */,
@@ -374,6 +374,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9AEFB63246E8B9200B2FFE3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9AEFB64246E8B9200B2FFE3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D9AEFB64246E8B9200B2FFE3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D98C373624660C7200919F2E /* Project object */;
 }
