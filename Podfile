@@ -6,5 +6,5 @@ target 'MiniList' do
 
   # Pods for MiniList
   pod 'RealmSwift'
-
+  pod 'SwipeCellKit'
 end
