@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
     
@@ -17,13 +17,27 @@ class CategoryViewController: SwipeTableViewController {
     
     var categoryArray : Results<Category>?
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+
+        tableView.separatorStyle = .none
         loadCategories()
+
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+         guard let navBar = navigationController?.navigationBar  else{fatalError("Navigation Controller does not exit.")
+        }
+        
+        navBar.backgroundColor = UIColor(hexString: "1C4348")
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(UIColor(hexString: "1C4348")!, returnFlat: true)]
         
         
         
     }
+    
+    
     //MARK:- TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,8 +48,16 @@ class CategoryViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.textLabel?.text = categoryArray?[indexPath.row].name ?? "No Categories added yet"
+        if let category = categoryArray?[indexPath.row]{
+            cell.textLabel?.text = category.name
+            guard let categoryColour = UIColor(hexString: category.colour)  else{fatalError()}
+        
+            cell.backgroundColor = categoryColour
+        
+            cell.textLabel?.textColor = ContrastColorOf(categoryColour, returnFlat: true)
+        }
         return cell
+        
     }
     
     //MARK:- TableView Delegate Methods
@@ -70,6 +92,7 @@ class CategoryViewController: SwipeTableViewController {
     func loadCategories(){
         
         categoryArray = realm.objects(Category.self)
+        
         tableView.reloadData()
     }
     //MARK:- Delete Data From Swipe
@@ -98,6 +121,7 @@ class CategoryViewController: SwipeTableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
+            newCategory.colour = UIColor.randomFlat().hexValue()
             
             self.save(category: newCategory)
         }
